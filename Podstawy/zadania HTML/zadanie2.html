@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tytuł strony</title>
+</head>
+<body>
+<script>
+
+function ShowInfo()
+{
+    document.write("<hr>")
+    document.write("Hello World")
+    document.write("<hr>")
+}
+
+ShowInfo()
+ShowInfo()
+
+function ShowInfo2 (komunikat)
+{
+document.write(komunikat)
+document.write("<br>")
+}
+
+ShowInfo2("Hello World")
+ShowInfo2("!!!!!!!!!!!!!!!")
+
+function Suma(liczbaPierwsza, liczbaDruga)
+{
+    var wynik;
+    wynik = liczbaPierwsza + liczbaDruga
+    return wynik
+}
+var wynikFunkcji = Suma(15, 2006)
+document.write(wynikFunkcji)
+document.write("<br>")
+
+</script>
+</body>
+</html>
