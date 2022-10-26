@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+<title>Tytuł strony</title>
+    </head>
+    <body>
+<script>
+    let tablicaLiczb = []
+    tablicaLiczb[0] = 5
+    tablicaLiczb[1]= 7
+    tablicaLiczb[2] = 1
+    tablicaLiczb[3]= 11576
+
+    for (let i = 0; i < 4; i++)
+    document.write(tablicaLiczb[i] + "<br>")
+
+function FindMax(paramTab)
+{
+    let actMax = paramTab[0]
+    for(let i = 0; i < tablicaLiczb.length; i++)
+        if(actMax < paramTab[i])
+       actMax = paramTab[i]
+    document.write("Największa wartość: " + actMax + "<br>")
+}
+FindMax(tablicaLiczb)
+FindMax(7)
+FindMax("qwertyuiop")
+
+function WyswietlParametry(p1, p2)
+{
+    document.write(p1+"<br>")
+    document.write(p2+"<br>")
+
+    document.write("Wyświetlenie wszystkich parametrów: <br/>")
+    for(let i = 0; i < arguments.length; i++)
+    document.write(arguments[i] + "<br/>")
+}
+//WyswietlParametry(15, "Ala")
+//WyswietlParametry(69)
+WyswietlParametry("Ola", 84, 32)
+//WyswietlParametry()
+
+</script>
+    </body>
+</html>
