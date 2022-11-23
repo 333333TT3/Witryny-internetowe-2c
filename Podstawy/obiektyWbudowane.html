@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tytuł strony</title>
+    </head>
+    <body>
+        <script>
+            //obiekt typu String
+            let tekst = "Ala ma kota";
+            let tekst2 = new String("Ala ma kota");
+
+            document.write("Zmienna tekst ma długość " + tekst.length + "<br/>");
+            document.write(tekst.substring(7, 11) + "<br/>");
+            document.write(tekst.toUpperCase() + "<br/>");
+            document.write(tekst.toLowerCase() + "<br/>");
+
+            //obiekt typu Array
+            let tab1 = [];
+            let tab2 = new Array();
+
+            tab1[0] = 5;
+            tab1[1] = 1;
+            tab1[2] = 4;
+
+            for (let i = 0; i < tab1.length; i++)
+                document.write(tab1[i] + ",");
+            document.write("<br/>");
+
+            document.write(tab1.join() + "<br/>");
+
+            //obiekt typu Date
+            let data = new Date();
+
+            document.write(data.toString() + "<br/>");
+            document.write("Rok: " + data.getFullYear() + "<br/>");
+            document.write("Miesiąc: " + data.getMonth() + "<br/>");
+            document.write("Dzień tygodnia: " + data.getDay() + "<br/>"); //dzień tygodnia
+            document.write("Dzień miesiąca: " + data.getDate() + "<br/>");
+            document.write("Godzina: " + data.getHours() + "<br/>");
+            document.write("Minuta: " + data.getMinutes() + "<br/>");
+            document.write("Sekunda " + data.getSeconds() + "<br/>");
+            document.write("Milisekunda: " + data.getMilliseconds() + "<br/>");
+
+            /*
+                Dzisiaj jest:
+                Środa, 02 listopad 2022 roku
+                Godzina: 15:01:05
+
+            */
+
+            
+
+        </script>
+    </body>
+</html>

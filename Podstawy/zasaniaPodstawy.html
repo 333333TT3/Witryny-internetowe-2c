@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Tytuł strony</title>
+    </head>
+    <body>
+        <script>
+            /*
+                Zadanie 1
+                Napisz funkcję, która przyjmie liczbę i wyświetli
+                informację czy jest ona parzysta czy nieparzysta.
+
+                Zadanie 2
+                Napisz funkcję, która przyjmie dwie wartości
+                i wyświetli:
+                * informację czy wartości są równe czy nie
+                * informację czy wartości są identyczne czy nie
+                 
+                Zadanie 3
+                Napisz funkcję, która przyjmie liczbę 
+                i wyswietli nazwę dnia tygodnia.
+
+                Zadanie 4*
+                Napisz funkcję, która pobierze liczbę
+                i wyświetli ją w systemie binarnym.
+            */
+
+            //zadanie3
+            function WyswietlDzienTygodnia(numerDnia)
+            {
+                switch(numerDnia)
+                {
+                    case 0:
+                    case 7:
+                        document.write("Niedziela<br/>");
+                        break;
+                    case 1:
+                        document.write("Poniedziałek<br/>");
+                        break;
+                    case 2:
+                        document.write("Wrotek<br/>");
+                        break;
+                }
+            }
+            WyswietlDzienTygodnia(1)
+
+            function DecToBin(decNumber)
+            {
+                var strBin = "";
+                while (decNumber > 0)
+                {
+                    var rest = decNumber % 2;
+                    decNumber = parseInt(decNumber / 2); 
+                    strBin = rest + strBin;
+                }
+                document.write(strBin);
+                document.write("<br/>");
+            }
+            function DecToBin2(decNumber)
+            {
+                var strBin = "";
+                while (decNumber > 0)
+                {
+                    var rest = decNumber & 1;
+                    decNumber = decNumber >> 1; 
+                    strBin = rest + strBin;
+                }
+                document.write(strBin);
+                document.write("<br/>");
+            }
+            DecToBin(86)
+            DecToBin2(86)
+            
+
+            function CheckIfPrimeNumber(numberToCheck)
+            {
+
+            }
+            CheckIfPrimeNumber(5);
+            CheckIfPrimeNumber(8);
+
+
+
+            for(var i = 0; i <= 10; i++)
+                document.write(i + "<br/>");
+
+            for(var mnozna = 1; mnozna<= 10; mnozna++)
+                for (var mnoznik = 1; mnoznik <= 10; mnoznik++)
+                    document.write(mnozna + " * " + mnoznik + "=" + (mnozna*mnoznik)+"<br/>");
+            
+            mnoznik = 0;
+            mnozna = 0;
+            while (mnozna <=10)
+            {
+                document.write(mnozna + " * " + mnoznik + "=" + (mnozna*mnoznik)+"<br/>");
+                mnoznik++;
+                if (mnoznik > 10)
+                {
+                    mnoznik = 0;
+                    mnozna++;
+                }
+            }
+        </script>
+    </body>
+</html>
