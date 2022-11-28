@@ -12,7 +12,25 @@
             value="Kliknij mnie" 
             onmouseenter="alert('Witaj na stronie. Zdarzenie najechania myszką');"/>
         <input type="text"/>
+    <br/>
+    <p>Nowy tekst: </p>
+    <input type="'text" id="newText" value="Przykładowy tekst"><br/>
+    <input type="button" value="Podmień tekst"/><br/>
 
+    <div id="divToChange"><p>Random TEXT</p></div>
+
+    <ing src="Dino cheat.png"/>
+
+    <script>
+        changeText();
+        function changeText()
+        {
+        let objectWithNewText = document.getElementById("newText");
+
+        let objectToChange = document.getElementById("divToChange");
+        objectToChange.innerHTML = objectWithNewText.value;
+        }
+    </script>
         <script>
             //alert("Witaj na stronie");
         </script>
