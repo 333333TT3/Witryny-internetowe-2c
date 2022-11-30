@@ -7,32 +7,104 @@
     <body>
         <input type="button" 
             value="Kliknij mnie" 
-            onclick="alert('Witaj na stronie');"/>
+            onclick="alert('Witaj na stronie');"/><br/>
         <input type="button" 
             value="Kliknij mnie" 
-            onmouseenter="alert('Witaj na stronie. Zdarzenie najechania myszką');"/>
-        <input type="text"/>
-    <br/>
-    <p>Nowy tekst: </p>
-    <input type="'text" id="newText" value="Przykładowy tekst"><br/>
-    <input type="button" value="Podmień tekst"/><br/>
+            onmouseleave="alert('Witaj na stronie. Zdarzenie najechania myszką');"/>
+        <br/>
+        <p>Nowy tekst:</p>
+        <input type="text" id="newText" value="Przykładowy tekst" /><br/>
+        <input type="button" value="Podmień tekst" onclick="changeText()"/><br/>
+       
+        <div id="divToChange"><p>Random text</p></div>
 
-    <div id="divToChange"><p>Random TEXT</p></div>
+        <img src="dinosaur.jpg" width="500" height="300"
+        onmouseenter="this.src='zd1.jpg'"
+        onmouseleave="this.src='dinosaur.jpg'"
+        />
 
-    <ing src="Dino cheat.png"/>
+        <img src="dinosaur.jpg" width="500" height="300" id="imgId"
+        onmouseenter="changeImage()"
+        onmouseleave="changeImage2()"
+        />
 
-    <script>
-        changeText();
-        function changeText()
-        {
-        let objectWithNewText = document.getElementById("newText");
+        <img src="dinosaur.jpg" width="500" height="300" id="img2Id"
+        onmouseenter="changeImage3('zd1.jpg')"
+        onmouseleave="changeImage3('dinosaur.jpg')"
+        />
 
-        let objectToChange = document.getElementById("divToChange");
-        objectToChange.innerHTML = objectWithNewText.value;
-        }
-    </script>
+        <img src="dinosaur.jpg" width="500" height="300" id="img3Id"
+        onmouseenter="changeImage4('zd1.jpg', 'img3Id')"
+        onmouseleave="changeImage4('dinosaur.jpg', 'img3Id')"
+        />
+
+        <img src="dinosaur.jpg" width="500" height="300" id="img4Id"
+        onmouseenter="changeImage4('zd1.jpg', 'img4Id')"
+        onmouseleave="changeImage4('dinosaur.jpg', 'img4Id')"
+        />
+
+        <img src="dinosaur.jpg" width="500" height="300"
+        onmouseenter="changeImage5('zd1.jpg', this)"
+        onmouseleave="changeImage5('dinosaur.jpg', this)"
+        />
+
+        <img src="dinosaur.jpg" width="500" height="300"
+        onmouseenter="changeImage5('zd1.jpg', this)"
+        onmouseleave="changeImage5('dinosaur.jpg', this)"
+        />
+
         <script>
+function pierwszaFunkcja(){
+    var content = '';
+     
+    var result = Math.floor(Math.random()*48 + 1);
+    content += result + ', ';
+ 
+    kontener.textContent += content;
+ 
+};
+
+
+            function changeImage()
+            {
+                document.getElementById("imgId").src = "zd1.jpg"
+            }
+
+            function changeImage2()
+            {
+                document.getElementById("imgId").src = "dinosaur.jpg"
+            }
+
+            function changeImage3(imageName)
+            {
+                document.getElementById("img2Id").src = imageName;
+            }
+
+            function changeImage4(imageName, id)
+            {
+                document.getElementById(id).src = imageName;
+            }
+
+            function changeImage5(imageName, pointer)
+            {
+                pointer.src = imageName;
+            }
+
+
+
             //alert("Witaj na stronie");
-        </script>
+            
+            function changeText()
+            {
+                let objectWithNewText = document.getElementById("newText");
+
+                let objectToChange = document.getElementById("divToChange");
+                //objectToChange.innerHTML="Ola ma szopa";
+                objectToChange.innerText = objectWithNewText.value;
+            }
+
+            
+            
+        </script>     
     </body>
 </html>
