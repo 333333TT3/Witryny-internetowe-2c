@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Przykładowy program</title>
+    </head>
+    <body>
+        <p>Podaj imię:</p>
+        <input type="text" id="nameId"/>
+        <p>Podaj wiek</p>
+        <input type="text" id="ageId"/>
+        <br/>
+        <input type="button" value="Wyświetl informację" onclick = "getInfo()"/>
+        <br/>
+        <div id="helloId">
+        
+        </div>
+        <div id="legalAgeId">
+        
+        </div>
+
+        <br/>
+        <div>Zasady:<br/>
+            * Poprawne formatowanie kodu<br/>
+            * Czytelność identyfikatorów<br/>
+            * DRY - don't repeat yourself<br/>
+            * KISS - Keep it simple stupid<br/>
+            * YAGNI - You aren't gonna need it<br/>
+            * SOLID - S - Single responsibility principle <br/>
+        </div>
+
+        <script>
+
+            function getInfo()
+            {
+                let age = document.getElementById("ageId").value
+
+                if (age == "")
+                {
+                    alert("Nie podano wieku")
+                    documen.getElementById("helloId").innerText = "Nie podano wieku"
+                }
+
+                    if(age > 140)
+                    {
+                        alert("Podaj odpowedni wiek")
+                    }
+                   else if(age < 1)
+                   {
+                    alert("Podaj odpowiedni wiek")
+                   }
+                function getAge()
+                {
+                   if(age >= 18)
+                   {
+                    alert("Jesteś pełnoletni")
+                   }
+                   else
+                   {
+                    alert("Jesteś niepełnoletni")
+                   }
+                }
+                let nameId = document.getElementById("nameId").value
+                let ageId = document.getElementById("ageId").value
+
+                document.write("Witaj na stronie " + nameId + ", " + " Jesteś " + getAge )
+
+            }
+            
+        </script>
+    </body>
+</html>
