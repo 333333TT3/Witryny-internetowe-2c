@@ -29,7 +29,7 @@
         </div>
 
         <script>
-
+            
             function getInfo()
             {
                 let age = document.getElementById("ageId").value
@@ -52,16 +52,17 @@
                 {
                    if(age >= 18)
                    {
-                    document.write(" Jesteś pełnoletni ")
+                    document.write(" Jesteś pełnoletni, ")
                    }
                    else
                    {
-                    document.write(" Jesteś niepełnoletni ")
+                    document.write(" Jesteś niepełnoletni, ")
                    }
                 }
                 let nameId = document.getElementById("nameId").value
-
-                document.write("Witaj na stronie " + nameId + ", " + getAge())
+                
+                getAge();
+                document.write("Witaj na stronie " + nameId)
                 
             }
             
