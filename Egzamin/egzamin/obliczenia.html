@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Stacja paliw</title>
+    <link rel="stylesheet" href="styl2.css">
+</head>
+<body>
+    <div id="banner">
+        <h1>Całodobowa stacja paliw</h1>
+    </div>
+    <div id="menu">
+        <a href="stacja.html"><img src="home.png" alt=""></a>
+        <a href="obliczenia.html"><img src="znak.png" alt=""></a>
+        <a href="kwerendy.txt">Pobierz dokument</a>
+    </div>
+    <div id="left">
+        <h2>Orientacyjny koszt paliwa</h2>
+        Rodzaj paliwa (1-benzyna, 2-olej napędowy) <br>
+        <input type="number" id="type"> <br>
+        Ile litrów? <br>
+        <input type="number" id="ammount"> <br>
+        <input type="button" value="Oblicz" onclick="check()">
+        <p id="wynik"></p>
+    </div>
+    <div id="right">
+        <img src="samochod.png" alt="car" id="auto">
+    </div>
+    <script>
+        function check() {
+            let type = document.getElementById("type").value
+            let ammount = document.getElementById("ammount").value
+            if (type == 1){
+                price = 4 * ammount
+            } 
+            else if(type == 2){
+                price = 3.5 * ammount
+            }
+            else{
+                price = 0
+            }
+            document.getElementById("wynik").innerHTML = "koszt paliwa: " + price + " zł"
+        }
+    </script>
+    <div id="footer">
+        <p>Stronę opracował: Antoni Kubicki</p>
+    </div>
+</body>
+</html>

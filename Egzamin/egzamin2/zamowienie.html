@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+  <head>
+        <link rel="stylesheet" href="styl10.css">
+        <meta charset="utf-8">
+        <title>Fabryka cukierków</title>
+
+    </head>
+  <body>
+    <section>
+        <div id="left">
+            <a href="zamowienie.html"id="ahref">Zamów cukierki</a>
+        </div>
+        <div id="right">
+            <a href="index.html"><img src="logotyp.png" alt="Nasze logo"></a>
+        </div>
+    </section>
+    <div id="banner">
+    <h1>Strefa zamówień</h1>
+    </div>
+    <section>
+        <div id="leftBottom">
+          <p>Numer kształtu</p>
+         <input type="number" id="number">
+          <p>Skomponuj swój kolor, podaj RGB:</p>
+            R:<input type="number" id="R">
+            G:<input type="number" id="G">
+            B:<input type="number" id="B">
+          <input type="button" onclick ="start()" value="zamówienie">
+          <p id="yourNumber">Twoje zamówienie</p>
+          <input type="button"  id ="rgb" value="Kolor">
+        </div>
+        <div id="rightBottom">
+            <h2>Nasza oferta</h2>
+        <table>
+                <tr>
+                    <td>Kształty</td>
+                    <td rowspan="2">Możesz zamówić<br> dowolny kolor cukierka</td>
+                </tr>
+            <tr>
+                <td>
+                    <ol>
+                        <li>cytyna</li>
+                        <li>liść</li>
+                        <li>banan</li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+        </div>
+    </section>
+     <div id="footer">
+      <p>Autor strony:Antoni Kubicki</p>
+     </div>
+    </div>
+    <script>
+    function start()
+    {   
+        let shape = document.getElementById("number").value
+        let orderNumber = document.getElementById("yourNumber");
+        
+        if(shape == 1)
+            orderNumber.innerText = "Twoje zamówienie to cukierek cytryna";
+        else if(shape == 2)
+            orderNumber.innerText = "Twoje zamówienie to cukierek liść";
+        else if(shape == 3)
+            orderNumber.innerText = "Twoje zamówienie to cukierek banan";
+        else 
+            orderNumber.innerText = "Twoje zamówienie to cukierek inny";
+        setRGB();
+    }  
+    function setRGB()
+    {
+        let R = document.getElementById("R").value
+        let G = document.getElementById("G").value
+        let B = document.getElementById("B").value
+        let color = document.getElementById("RGB");
+
+        color.style.backgroundColor = "RGB(" + R +"," + G + "," + B +")"
+    }
+    </script>
+  </body>
+</html>

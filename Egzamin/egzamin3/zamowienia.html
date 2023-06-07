@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>Zamówienia hurtowe</title>
+    <link rel="stylesheet" href="styl4.css">
+</head>
+<body>
+    <div id="banner">
+        <h1>Sieci komputerowe</h1>
+    </div>
+ <section>
+<div id="left">
+<h2>Aktualizacja i zamówienia materiałów</h2>
+<p>Do wewnętrznego użytku firmy</p>
+<img src="obraz.jpg" alt="page" height="500px">
+</div>
+<div id="right">
+<table>
+<tr>
+<th>Produkt</th><th>Jednostka</th><th>Dostępna ilość</th><th>Aktualizacja</th><th>Zamówienie</th>
+</tr>
+<tr>
+<td id="first">Skrętka U/UTP drut</td><td>metr</td><td id="first1">20</td><td><button onclick="Update('first1')" >Aktualizuj</button></td><td><button onclick="Order('first')">Zamów</button></td>
+</tr>
+<tr>
+<td id="second">Skrętka U/UTP linka</td><td>metr</td><td id="second1">2</td><td><button  onclick="Update('second1')">Aktualizuj</button></td><td><button onclick="Order('second')">Zamów</button></td>
+</tr>
+<tr>
+<td id="third">Wtyki 8P8C</td><td>sztuki</td><td id="third1">10</td><td><button  onclick="Update('third1')">Aktualizuj</button></td><td><button onclick="Order('third')">Zamów</button></td>
+</tr>
+<tr>
+<td id="fourth">Moduły Keystone</td><td>sztuki</td><td id="fourth1">30</td><td><button  onclick="Update('fourth1')">Aktualizuj</button></td></td><td><button onclick="Order('fourth')">Zamów</button></td>
+</tr>
+</table>
+</div>
+</section>
+<script>
+var Orderid = 0;
+    function lackOF()
+	{
+		let value1 = document.getElementById("first1").innerText;
+		let value2 = document.getElementById("second1").innerText;
+		let value3 = document.getElementById("third1").innerText;
+		let value4 = document.getElementById("fourth1").innerText;
+
+		let backgroundValue1 = document.getElementById('first1');
+		let backgroundValue2 = document.getElementById('second1');
+		let backgroundValue3 = document.getElementById('third1');
+		let backgroundValue4 = document.getElementById('fourth1');
+
+		let valueTab = [value1,value2,value3,value4];
+		let backgroundValueTab = [backgroundValue1,backgroundValue2,backgroundValue3,backgroundValue4];
+
+		for(let i=0;i<4;i++) 
+		{		
+			if(valueTab[i] == 0 )
+			{
+			backgroundValueTab[i].style.backgroundColor = "red";
+			}
+			else if(valueTab[i] >= 1 && valueTab[i] <=5)
+			{
+			backgroundValueTab[i].style.backgroundColor = "yellow";
+			}
+			else
+			backgroundValueTab[i].style.backgroundColor = "Honeydew";
+		}
+	}
+			
+		function Update(updateId)
+		{
+			let value = prompt("Podaj nową ilość:");
+			document.getElementById(updateId).innerHTML = value;
+			lackOF();
+		}
+		function Order(idies)
+		{
+			let id = document.getElementById(idies).innerHTML;
+			Orderid = Orderid+1;
+			alert(" numer zamówienia " + Orderid+" produkt "+ id);
+		}
+</script>
+<div id="menu">
+    <a href="kwerendy.txt">Nasza strona internetowa</a>
+</div>
+    <div id="footer">
+        <p>Stronę opracował: Antoni Kubicki</p>
+    </div>
+</body>
+</html>

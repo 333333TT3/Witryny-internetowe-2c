@@ -1,0 +1,56 @@
+* {
+    font-family: Georgia;
+}
+
+main {
+    display: flex;
+    flex-direction: reverse;
+}
+
+.left {
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 30%;
+}
+
+.right {
+    background-color: maroon;
+    color: white;
+    height: 600px;
+    width: 70%;
+    overflow: auto;
+}
+
+footer {
+    background-color: dimgray;
+    color: white;
+}
+
+.leftElements {
+    display: flex;
+    flex-direction: reverse;
+}
+
+p {
+    padding: 10px;
+}
+
+img {
+    padding: 10px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+#Indigo {
+    background-color: indigo;
+}
+
+#SteelBlue {
+    background-color: steelblue;
+}
+
+#Olive {
+    background-color: olive;
+}

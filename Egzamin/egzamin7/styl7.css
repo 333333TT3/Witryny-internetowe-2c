@@ -1,0 +1,50 @@
+* {
+    font-family: Helvetica;
+    background-color: rgb(70, 130, 180);
+}
+img {
+    height: 40%;
+}
+.banner, footer{
+    height: 30px;
+    color: white;
+    text-align: center;
+    background-color: rgb(70, 130, 180);
+}
+.main{
+    margin: 50px;
+    text-align: center;
+    background-color: rgb(176, 196, 222);
+    clear: both;
+}
+.right {
+    width: 20%;
+    height: 300px;
+    color: white;
+    background-color: rgb(70, 130, 180);
+    float: right;
+}
+.left {
+    width: 80%;
+    height: 300px;
+    color: white;
+    background-color: rgb(70, 130, 180);
+    float: left;
+}
+main img {
+    padding: 3px;
+    border-style: dashed;
+    border-color: blue;
+    border-width: 1px;
+    border-radius: 10px;
+}
+.left img:hover {
+    border-style: solid;
+    border-color: white;
+    border-width: 1px;
+}
+.footer{
+    color: white;
+    text-align: center;
+    font-family: Helvetica;
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>Style w JavaScript</title>
+        <link rel="stylesheet" href="styl6.css">
+    </head>
+    <body>
+    <main>
+        <div class="left">
+            <h1>Konfigurator stylu</h1>
+            <p>Podaj kolor tła</p>
+            <button id="Indigo" onclick="indigoColor()">Indigo</button>
+            <button id="SteelBlue" onclick="steelBlueColor()">SteelBlue</button>
+            <button id="Olive" onclick="oliveColor()">Olive</button>
+             <p>Podaj kolor czcionki</p>
+            <select onchange="fontColor()" id="list">
+            <option value="white">White</option>
+            <option value="tan">Tan</option>
+            <option value="bisque">Bisque</option>
+            <option value="plum">Plum</option>
+            </select>
+                <p>Podaj rozmiar czcionki w procentach, np. 200%</p>
+                <input type="text" value="100%" onchange="fontSize()" id="sizeOfFont">
+                <p>Czy rysunek ma mieć ramkę?</p>
+                <input type="checkbox" id="borderCheck" onchange="border()" checked> Rysuj ramkę
+                <p>Jaki jest typ punktora listy?</p>
+                <input type="radio" onchange="listPoint('disk')" checked name="pointType"> dysk<br>
+                <input type="radio" onchange="listPoint('square')" name="pointType"> kwadrat<br>
+                <input type="radio" onchange="listPoint('circle')" name="pointType"> okrąg
+            </div>
+            <div class="right" id="right">
+                <section class="leftElements">
+                    <img src="gibraltar.jpg" alt="Półwysep Gibraltar" id="picture">
+                    <ul id="list2nd">
+                        <li>element 1</li>
+                        <li>element 2</li>
+                        <li>element 3</li>
+                    </ul>
+                </section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+            </div>
+        </main>
+        <script>
+            function border()
+            {
+                if (document.getElementById("borderCheck").checked)
+                    document.getElementById("picture").style.border = "1px solid white";
+                else
+                    document.getElementById("picture").style.border = "none";
+            }
+            function listPoint(type)
+            {
+                let typeOfPoint = document.getElementById("list2nd");
+                if (type == "disk")
+                {
+                    typeOfPoint.style.listStyle = "disc";
+                }
+                else if (type == "square")
+                {
+                    typeOfPoint.style.listStyle = "square";
+                }
+                else if (type == "circle")
+                {
+                    typeOfPoint.style.listStyle = "circle";
+                }
+            }
+            function indigoColor()
+            {
+                document.getElementById("right").style.backgroundColor = "indigo";
+            }
+            function steelBlueColor()
+            {
+                document.getElementById("right").style.backgroundColor = "steelblue";
+            }
+            function oliveColor()
+            {
+                document.getElementById("right").style.backgroundColor = "olive";
+            }
+            function whiteFont()
+            {
+                document.getElementById("right").style.color = "white";
+            }
+            function fontColor()
+            {
+                let color = document.getElementById("list").value;
+                document.getElementById("right").style.color = color;
+            }
+            function fontSize()
+            {
+                let size = document.getElementById("sizeOfFont").value;
+                document.getElementById("right").style.fontSize = size;
+            }
+        </script>
+        <footer>
+            Autor: Antoni Kubicki
+        </footer>
+    </body>
+</html>

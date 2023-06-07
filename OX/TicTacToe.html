@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" type="text/css" href="TicTacToe.css">
+  <script src="TicTacToe.js"></script>
+</head>
+<body>
+  <h1>Tic Tac Toe<br><h2>by Antoni Kubicki</h2></h1>
+  <div>
+    <label for="player-select">Select Player:</label>
+    <select id="player-select" onchange="changePlayer()">
+      <option value="X">Player X</option>
+      <option value="O">Player O</option>
+    </select>
+  </div>
+  <div id="board">
+    <div class="cell" onclick="makeMove(0, 0)"></div>
+    <div class="cell" onclick="makeMove(0, 1)"></div>
+    <div class="cell" onclick="makeMove(0, 2)"></div>
+    <div class="cell" onclick="makeMove(1, 0)"></div>
+    <div class="cell" onclick="makeMove(1, 1)"></div>
+    <div class="cell" onclick="makeMove(1, 2)"></div>
+    <div class="cell" onclick="makeMove(2, 0)"></div>
+    <div class="cell" onclick="makeMove(2, 1)"></div>
+    <div class="cell" onclick="makeMove(2, 2)"></div>
+  </div>
+
+  <input type="button" value="Start again" onClick="location.reload();">
+
+  <script>
+    function makeMove(row, col) {
+      ticTacToe.makeMove(row, col);
+      updateBoard();
+    }
+
+    function changePlayer() {
+      const playerSelect = document.getElementById("player-select");
+      const selectedPlayer = playerSelect.value;
+      ticTacToe.currentPlayer = selectedPlayer;
+    }
+
+    function updateBoard() {
+      const cells = document.getElementsByClassName("cell");
+
+      for (let i = 0; i < cells.length; i++) {
+        const row = Math.floor(i / 3);
+        const col = i % 3;
+        const cellValue = ticTacToe.board[row][col];
+        cells[i].innerText = cellValue;
+      }
+    }
+  </script>
+  <h3><b><p>Autor: Antoni Kubicki</p></b></h3>
+</body>
+</html>

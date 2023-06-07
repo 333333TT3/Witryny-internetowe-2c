@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>Galeria</title>
+        <link rel="stylesheet" href="styl7.css">
+    </head>
+  <body>
+    <main>
+        <section>
+        <div class="banner">
+          <h2>Galeria miejsc ciekawych</h2>
+        </div>
+        <div class="main">
+          <img src="lanzarotte.jpg" alt="galeria" id="picture">
+        </div>
+        <div class="left">
+          <h3>Przeglądaj zdjęcia</h3>
+            <img src="lanzarotte.jpg" alt="lanzarotte" onclick="changePhoto('lanzarotte')">
+            <img src="pekin.jpg" alt="pekin" onclick="changePhoto('pekin')">
+            <img src="serengeti.jpg" alt="serengeti" onclick="changePhoto('serengeti')">
+            <img src="wenecja.jpg" alt="wenecja" onclick="changePhoto('wenecja')">
+            <img src="tajlandia.jpg" alt="tajlandia" onclick="changePhoto('tajlandia')">
+        </div>
+        <div class="right">
+          <h3>Obrazy w naszej galerii</h3>
+          <table>
+            <tr>
+                <td> Europa </td><td> Azja </td><td> Afryka </td>
+            </tr>
+            <td>2</td><td>2</td><td>1</td>
+            <p>Polub nas
+            <img src="icon-off.png" id="icon" onclick="changeIcon()"></p>
+            <a href="https://pixabay.com">Odkryj więcej zdjęć</a>
+           </tr>
+          </table>
+        </div>
+        <div class="footer">
+            Autor: Antoni Kubicki
+        </div>
+    </section>
+    </main>
+        <script>
+             function changePhoto(name)
+        {
+            let photoToChange = document.getElementById("photo");
+            if (name == "lanzarotte")
+            {
+                photoToChange.src = "lanzarotte.jpg";
+            }
+            else if (name == "pekin")
+            {
+                photoToChange.src = "pekin.jpg";
+            }
+            else if (name == "serengeti")
+            {
+                photoToChange.src = "serengeti.jpg";
+            }
+            else if (name == "wenecja")
+            {
+                photoToChange.src = "wenecja.jpg";
+            }
+            else if (name == "tajlandia")
+            {
+                photoToChange.src = "tajlandia.jpg";
+            }
+        }
+
+        let iconToSet = 0;
+        function changeIcon()
+        {
+            let iconToChange = document.getElementById("icon");
+            iconToSet++;
+            if (iconToSet > 1)
+            {
+                iconToSet = 0;
+            }
+            if (iconToSet == 1)
+            {
+                iconToChange.src = "icon-on.png";
+            }
+            else
+            {
+                iconToChange.src = "icon-off.png";
+            }
+        }
+
+        </script>
+  </body>
+</html>
